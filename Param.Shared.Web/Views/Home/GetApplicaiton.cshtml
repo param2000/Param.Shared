@@ -1,0 +1,16 @@
+﻿@using Param.Shared.Core
+@model RequireForCompletnessValidator
+
+<h2>Status</h2>
+<style>
+.red{color:red;background-color:red;border:1px solid black}
+.green{color:green;background-color:green;border:1px solid black}
+</style>
+<table style="border:1px solid black"><tr>
+@foreach (var item in Model.All)
+{
+    var appliedClass = Model.Failed.Contains(item) ? "red" : "green";
+    <td class="@appliedClass">&nbsp;</td>
+}
+</tr>
+</table>
